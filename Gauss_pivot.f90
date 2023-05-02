@@ -32,40 +32,40 @@ use basic_types
 
     implicit none 
     
-	integer(int4) :: m, n
+    integer(int4) :: m, n
     integer(int4) :: i, j, k, pivot_row
-	real(real8), dimension(:,:), allocatable :: A
-	real(real8), dimension(:), allocatable :: B, X      
+    real(real8), dimension(:,:), allocatable :: A
+    real(real8), dimension(:), allocatable :: B, X      
     real(real8) :: pivot, multiplier, temp
-	real(real8), parameter :: pi = 4.0_real8*atan(1.0_real8)
+    real(real8), parameter :: pi = 4.0_real8*atan(1.0_real8)
 
-	! ---------------------------------------
-	! Task: do the same by an input file
-	! ---------------------------------------
+    ! ---------------------------------------
+    ! Task: do the same by an input file
+    ! ---------------------------------------
 	
     m = 3; n = 3 ! Size of the sistem
 	
-	! Allocate the matrix
-	allocate(A(m,n))
-	allocate(B(m))
-	allocate(X(m))      	
+    ! Allocate the matrix
+    allocate(A(m,n))
+    allocate(B(m))
+    allocate(X(m))      	
 	
     A = reshape([2.0_real8, 1.0_real8, 4.0_real8, 4.0_real8, 2.0_real8, 4.0_real8, 3.0_real8, -2.0_real8, 3.0_real8], [m,n])
     B = [1.0_real8, 11.0_real8, 3.0_real8]
 
-	! Plot the matrix on screen
-	write(output_unit,'(/5X,A16/)') "The matrix A is:"
-	do i = 1, n		
-	    write(output_unit,'(5X,6F8.4)') A(i,:)		
-	end do
+    ! Plot the matrix on screen
+    write(output_unit,'(/5X,A16/)') "The matrix A is:"
+    do i = 1, n		
+    	write(output_unit,'(5X,6F8.4)') A(i,:)		
+    end do
 	
-	! Plot the vector on screen
-	write(output_unit,'(/5X,A16/)') "The vector B is:"
-	do i = 1, n		
-	    write(output_unit,'(5X,F10.4)') B(i)		
-	end do 	
+    ! Plot the vector on screen
+    write(output_unit,'(/5X,A16/)') "The vector B is:"
+    do i = 1, n		
+    	write(output_unit,'(5X,F10.4)') B(i)		
+    end do 	
 	
-	! Elimination of Gauss with pivoting
+    ! Elimination of Gauss with pivoting
     do k = 1, n-1
         pivot = abs(A(k,k))
         pivot_row = k
@@ -112,9 +112,9 @@ use basic_types
 
     ! Display the solution on screen
     write(output_unit,'(//5X,A16/)') "The solution is:"
-	do i = 1, n		
-	    write(output_unit,'(5X,A1,I1,A1,X,F10.4)') "x", i, "=", X(i)		
-	end do
+    do i = 1, n		
+    	write(output_unit,'(5X,A1,I1,A1,X,F10.4)') "x", i, "=", X(i)		
+    end do
 	
-	write(output_unit,*)
+    write(output_unit,*)
 end program Gauss_pivot
