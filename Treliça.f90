@@ -92,7 +92,7 @@ use open_close_session
 		         0.0_real8 , 0.0_real8 , 0.0_real8  , 1.0_real8  , 0.0_real8 , 0.0_real8  ,&
 		         0.0_real8 , 0.0_real8 , 0.0_real8  , 0.0_real8  , 0.0_real8 , 1.0_real8] ,[m,n])
 	
-    B = [0.0_real8,-1000.0_real8,0.0_real8,0.0_real8,0.0_real8,0.0_real8]
+        B = [0.0_real8,-1000.0_real8,0.0_real8,0.0_real8,0.0_real8,0.0_real8]
 
 	! Plot the matrix on screen
 	write(output_unit,'(/5X,A16/)') "The matrix A is:"
