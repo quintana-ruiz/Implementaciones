@@ -3,4 +3,4 @@ En este repositorio serán colocados los códigos utilizados en la materia "Intr
 Los mismos corresponden al código fuente.
 
 ### Descargar
-> Para descargar, ir hasta **code**
+> Para descargar, ir hasta **code** y copiar en link para clonar.
