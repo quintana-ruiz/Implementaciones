@@ -21,7 +21,7 @@ use basic_types
 	
 	public :: output_unit
 	
-	! define basec units
+	! define basic units
 	integer(int4), parameter :: output_unit = 6 ! sreen
 	
 end module io_files
@@ -39,74 +39,74 @@ implicit none
         module procedure :: open_s
     end interface open_session
 
-	contains
+    contains
 	
 	subroutine open_s(unit)
 	    implicit none
-		! Local variables
+	    ! Local variables
 	    integer(int4), intent(in) :: unit
 	    
-		write(unit,'(/)')
-		write(unit,10) "--------------------------------------------------------------"
-		write(unit,11) "Introduction to Scientific Computing"
-		write(unit,10) "--------------------------------------------------------------"
+	    write(unit,'(/)')
+	    write(unit,10) "--------------------------------------------------------------"
+	    write(unit,11) "Introduction to Scientific Computing"
+	    write(unit,10) "--------------------------------------------------------------"
 		
-        10 format(5X,A)
-		11 format(12X,5X,A36)
+            10 format(5X,A)
+	    11 format(12X,5X,A36)
 	
 	end subroutine open_s
 
 end module open_close_session 	
 	
-program Gauss_pivot
+program trelica
 use io_files
 use basic_types
 use open_close_session
 
     implicit none 
     
-	integer(int4) :: m, n
+    integer(int4) :: m, n
     integer(int4) :: i, j, k, pivot_row
-	real(real8), dimension(:,:), allocatable :: A
-	real(real8), dimension(:), allocatable :: B, X      
+    real(real8), dimension(:,:), allocatable :: A
+    real(real8), dimension(:), allocatable :: B, X      
     real(real8) :: pivot, multiplier, temp
-	real(real8), parameter :: pi = 4.0_real8*atan(1.0_real8)
+    real(real8), parameter :: pi = 4.0_real8*atan(1.0_real8)
 
-	call open_session(output_unit)
+    call open_session(output_unit)
 	
-	! ---------------------------------------
-	! Task: do the same by an input file
-	! ---------------------------------------
+    ! ---------------------------------------
+    ! Task: do the same by an input file
+    ! ---------------------------------------
 	
     m = 6; n = 6 ! Size of the sistem
 	
-	! Allocate the matrix
-	allocate(A(m,n))
-	allocate(B(m))
-	allocate(X(m))      	
+    ! Allocate the matrix
+    allocate(A(m,n))
+    allocate(B(m))
+    allocate(X(m))      	
 
-	A = reshape([sin(pi/3) , cos(pi/3) , -sin(pi/3) , -cos(pi/3) , 0.0_real8 , 0.0_real8  ,&
-		         0.0_real8 , 0.0_real8 , -1.0_real8 , 0.0_real8  , 1.0_real8 , 0.0_real8  ,&
-		         -cos(pi/3), sin(pi/3) , 0.0_real8  , 0.0_real8  , cos(pi/3) , -sin(pi/3) ,&
-		         0.0_real8 , 0.0_real8 , 1.0_real8  , 0.0_real8  , 0.0_real8 , 0.0_real8  ,&
-		         0.0_real8 , 0.0_real8 , 0.0_real8  , 1.0_real8  , 0.0_real8 , 0.0_real8  ,&
-		         0.0_real8 , 0.0_real8 , 0.0_real8  , 0.0_real8  , 0.0_real8 , 1.0_real8] ,[m,n])
+    A = reshape([sin(pi/3) , cos(pi/3) , -sin(pi/3) , -cos(pi/3) , 0.0_real8 , 0.0_real8  ,&
+		 0.0_real8 , 0.0_real8 , -1.0_real8 , 0.0_real8  , 1.0_real8 , 0.0_real8  ,&
+		 -cos(pi/3), sin(pi/3) , 0.0_real8  , 0.0_real8  , cos(pi/3) , -sin(pi/3) ,&
+		 0.0_real8 , 0.0_real8 , 1.0_real8  , 0.0_real8  , 0.0_real8 , 0.0_real8  ,&
+		 0.0_real8 , 0.0_real8 , 0.0_real8  , 1.0_real8  , 0.0_real8 , 0.0_real8  ,&
+		 0.0_real8 , 0.0_real8 , 0.0_real8  , 0.0_real8  , 0.0_real8 , 1.0_real8] ,[m,n])
 	
-        B = [0.0_real8,-1000.0_real8,0.0_real8,0.0_real8,0.0_real8,0.0_real8]
+    B = [0.0_real8,-1000.0_real8,0.0_real8,0.0_real8,0.0_real8,0.0_real8]
 
-	! Plot the matrix on screen
-	write(output_unit,'(/5X,A16/)') "The matrix A is:"
-	do i = 1, n		
-	    write(output_unit,'(5X,6F8.4)') A(i,:)		
-	end do
+    ! Plot the matrix on screen
+    write(output_unit,'(/5X,A16/)') "The matrix A is:"
+    do i = 1, n		
+    	write(output_unit,'(5X,6F8.4)') A(i,:)		
+    end do
+    
+    ! Plot the vector on screen
+    write(output_unit,'(/5X,A16/)') "The vector B is:"
+    do i = 1, n		
+    	write(output_unit,'(5X,F10.4)') B(i)		
+    end do 	
 	
-	! Plot the vector on screen
-	write(output_unit,'(/5X,A16/)') "The vector B is:"
-	do i = 1, n		
-	    write(output_unit,'(5X,F10.4)') B(i)		
-	end do 	
-	
-	! Elimination of Gauss with pivoting
+    ! Elimination of Gauss with pivoting
     do k = 1, n-1
         pivot = abs(A(k,k))
         pivot_row = k
@@ -149,13 +149,13 @@ use open_close_session
             X(i) = X(i) - A(i,j) * X(j)
         end do
         X(i) = X(i) / A(i,i)
-	end do
+    end do
 
     ! Display the solution on screen
     write(output_unit,'(//5X,A16/)') "The solution is:"
-	do i = 1, n		
-	    write(output_unit,'(5X,A1,I1,A1,X,F10.4)') "x", i, "=", X(i)		
-	end do
+    do i = 1, n		
+    	write(output_unit,'(5X,A1,I1,A1,X,F10.4)') "x", i, "=", X(i)		
+    end do
 	
-	write(output_unit,*)
-end program Gauss_pivot
+    write(output_unit,*)
+end program trelica
