@@ -88,9 +88,9 @@ use open_close_session
     A = reshape([sin(pi/3) , cos(pi/3) , -sin(pi/3) , -cos(pi/3) , 0.0_real8 , 0.0_real8  ,&
 		 0.0_real8 , 0.0_real8 , -1.0_real8 , 0.0_real8  , 1.0_real8 , 0.0_real8  ,&
 		 -cos(pi/3), sin(pi/3) , 0.0_real8  , 0.0_real8  , cos(pi/3) , -sin(pi/3) ,&
-		 0.0_real8 , 0.0_real8 , 1.0_real8  , 0.0_real8  , 0.0_real8 , 0.0_real8  ,&
-		 0.0_real8 , 0.0_real8 , 0.0_real8  , 1.0_real8  , 0.0_real8 , 0.0_real8  ,&
-		 0.0_real8 , 0.0_real8 , 0.0_real8  , 0.0_real8  , 0.0_real8 , 1.0_real8] ,[m,n])
+		 0.0_real8 , 0.0_real8 , -1.0_real8 , 0.0_real8  , 0.0_real8 , 0.0_real8  ,&
+		 0.0_real8 , 0.0_real8 , 0.0_real8  , -1.0_real8 , 0.0_real8 , 0.0_real8  ,&
+		 0.0_real8 , 0.0_real8 , 0.0_real8  , 0.0_real8  , 0.0_real8 , -1.0_real8],[m,n])
 	
     B = [0.0_real8,-1000.0_real8,0.0_real8,0.0_real8,0.0_real8,0.0_real8]
 
