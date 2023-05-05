@@ -3,7 +3,7 @@ En este repositorio se encuentran los códigos utilizados en la materia "Introdu
 Los mismos corresponden al código fuente.
 
 ## Lista de códigos
-- **ctof** : Convierte grados Celsius a Fahrenheit y Kelvin.
+- **ctof** : Convierte grados Celsius a Fahrenheit o Kelvin.
 - **Gauss_pivot** : Eliminación Gaussiana con pivoteamiento parcial.
 - **Treliça** : Aplicación de la eliminación Gaussiana con pivoteamiento parcial a una estructura plana. 
 
