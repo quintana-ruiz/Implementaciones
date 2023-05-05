@@ -4,7 +4,7 @@ Los mismos corresponden al código fuente.
 
 ## Lista de códigos
 - **ctof** : Convierte grados Celcius a Fahrenheit y Kelvin.
-- **Gauss_pivot** : Eliminación Gaussiana com pivoteamiento parcial.
+- **Gauss_pivot** : Eliminación Gaussiana con pivoteamiento parcial.
 - **Treliça** : Aplicación de la eliminación Gaussiana con pivoteamiento parcial a una estructura plana. 
 
 
