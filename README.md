@@ -5,7 +5,8 @@ Los mismos corresponden al código fuente.
 ## Lista de códigos
 - **ctof** : Convierte grados Celsius a Fahrenheit o Kelvin.
 - **Gauss_pivot** : Eliminación Gaussiana con pivoteamiento parcial.
-- **Treliça** : Aplicación de la eliminación Gaussiana con pivoteamiento parcial a una estructura plana. 
+- **Treliça** : Aplicación de la eliminación Gaussiana con pivoteamiento parcial a una estructura plana.
+- **fibo** : Secuencia de Fibonacci (utilizando una función recursiva).
 
 
 
