@@ -1,12 +1,10 @@
-## Implementaciones
-En este repositorio se encuentran los códigos utilizados en la materia "Introducción a la Computación Científica". 
-Los mismos corresponden al código fuente.
+## Implementations
+In this repository you can find the codes used in the course "Introduction to Scientific Computing". They correspond to the source code.
 
-## Lista de códigos
-- **ctof** : Convierte grados Celsius a Fahrenheit o Kelvin.
-- **Gauss_pivot** : Eliminación Gaussiana con pivoteamiento parcial.
-- **Treliça** : Aplicación de la eliminación Gaussiana con pivoteamiento parcial a una estructura plana.
-- **fibo** : Secuencia de Fibonacci (utilizando una función recursiva).
-
+## List of codes
+- **ctof** : Convert degrees Celsius to Fahrenheit or Kelvin.
+- **Gauss_pivot** : Gaussian elimination with partial pivoting.
+- **Treliça** : Application of Gaussian elimination with partial pivoting to solve a 2D Truss.
+- **fibo** : Fibonacci sequence (using a recursive function).
 
 
