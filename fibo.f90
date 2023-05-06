@@ -22,24 +22,24 @@ use basic_types, only: int4, real8
     implicit none
 
     integer(int4) :: n, i
-	integer(int4), parameter :: unit = 6
+    integer(int4), parameter :: unit = 6
 
     write(unit,'(/A)')     "-----------------------------------------------"
-	write(unit,'(18X,A9)')  "Fibonacci"
-	write(unit,'(A)')      "-----------------------------------------------"
+    write(unit,'(18X,A9)') "Fibonacci"
+    write(unit,'(A)')      "-----------------------------------------------"
 	
-	write(unit,'(A51)',advance='no') "Enter the number of Fibonacci numbers to generate: "	
+    write(unit,'(A51)',advance='no') "Enter the number of Fibonacci numbers to generate: "	
     read(*,'(I2)') n
 
     write(unit,'(A19)') "Fibonacci sequence:"
     
-	do i = 0, n - 1
-        write(unit,'(19X,I2)') fibonacci(i)
-	end do
+    do i = 0, n - 1
+    	write(unit,'(19X,I2)') fibonacci(i)
+    end do
 	
-	write(unit,*)
+    write(unit,*)
 
-	contains
+    contains
 
     recursive function fibonacci(num) result(fib)
         integer(int4), intent(in) :: num
