@@ -7,4 +7,6 @@ In this repository you can find the codes used in the course "Introduction to Sc
 - **Treliça** : Application of Gaussian elimination with partial pivoting to solve a 2D Truss.
 - **fibo** : Fibonacci sequence (using a recursive function).
 
+## Interesting links
+- [Degenerate Conic](https://degenerateconic.com/)
 
