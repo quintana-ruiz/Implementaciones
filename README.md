@@ -8,5 +8,5 @@ In this repository you can find the codes used in the course "Introduction to Sc
 - **fibo** : Fibonacci sequence (using a recursive function).
 
 ## Interesting links
-- [Degenerate Conic](https://degenerateconic.com/)
+- [Fortran programming language](https://fortran-lang.org/en/)
 
