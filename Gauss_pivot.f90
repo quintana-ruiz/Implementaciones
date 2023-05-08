@@ -38,13 +38,9 @@ use basic_types
     real(real8), dimension(:), allocatable :: B, X      
     real(real8) :: pivot, multiplier, temp
     real(real8), parameter :: pi = 4.0_real8*atan(1.0_real8)
-
-    ! ---------------------------------------
-    ! Task: do the same by an input file
-    ! ---------------------------------------
 	
     m = 3; n = 3 ! Size of the sistem
-	
+    
     ! Allocate the matrix
     allocate(A(m,n))
     allocate(B(m))
@@ -52,6 +48,10 @@ use basic_types
 	
     A = reshape([2.0_real8, 1.0_real8, 4.0_real8, 4.0_real8, 2.0_real8, 4.0_real8, 3.0_real8, -2.0_real8, 3.0_real8], [m,n])
     B = [1.0_real8, 11.0_real8, 3.0_real8]
+    
+    ! ---------------------------------------
+    ! Task: do the same by an input file
+    ! ---------------------------------------
 
     ! Plot the matrix on screen
     write(output_unit,'(/5X,A16/)') "The matrix A is:"
