@@ -74,10 +74,6 @@ use open_close_session
 
     call open_session(output_unit)
 	
-    ! ---------------------------------------
-    ! Task: do the same by an input file
-    ! ---------------------------------------
-	
     m = 6; n = 6 ! Size of the sistem
 	
     ! Allocate the matrix
@@ -94,6 +90,10 @@ use open_close_session
 	
     B = [0.0_real8,-1000.0_real8,0.0_real8,0.0_real8,0.0_real8,0.0_real8]
 
+    ! ---------------------------------------
+    ! Task: do the same by an input file
+    ! ---------------------------------------
+    
     ! Plot the matrix on screen
     write(output_unit,'(/5X,A16/)') "The matrix A is:"
     do i = 1, n		
