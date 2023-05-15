@@ -1,5 +1,5 @@
 ## Implementations
-In this repository you can find the codes used in the course "Introduction to Scientific Computing". They correspond to the source code.
+In this repository you can find the codes used in the course "Introduction to Scientific Computing". They correspond to the source code written in Fortran.
 
 ## List of codes
 - **ctof** : Convert Celsius to Fahrenheit or Kelvin.
